@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+aiosqlite
+httpx
+beautifulsoup4
+lxml
+pandas
+openpyxl
+fpdf2
+pymupdf
+python-multipart
+pydantic-settings
+aiofiles
+fake-useragent
