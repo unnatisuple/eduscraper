@@ -11,8 +11,10 @@ import type {
   ResultsResponse,
 } from "@/types";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
 const api = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: API_BASE_URL,
   timeout: 30000,
 });
 
@@ -69,5 +71,5 @@ export async function getResults(jobId: number): Promise<ResultsResponse> {
 /* ── Export ────────────────────────────────────────────────────── */
 
 export function getExportUrl(jobId: number, format: "csv" | "xlsx" | "json" | "pdf"): string {
-  return `http://localhost:8000/api/export/${jobId}?format=${format}`;
+  return `${API_BASE_URL}/api/export/${jobId}?format=${format}`;
 }
